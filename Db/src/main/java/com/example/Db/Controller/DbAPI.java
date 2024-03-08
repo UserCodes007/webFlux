@@ -4,6 +4,8 @@ import com.example.Db.Exception.UserNotFoundException;
 import com.example.Db.Model.User;
 import com.example.Db.Model.UserDTO;
 import com.example.Db.Repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
@@ -14,7 +16,7 @@ public class DbAPI {
     DbAPI(UserRepository repo){
         this.repo=repo;
     }
-
+    Logger logger = LoggerFactory.getLogger(DbAPI.class);
     @PostMapping("/create")
     public UserDTO add(@RequestBody User user) {
         return new UserDTO(repo.save(user));
@@ -23,6 +25,7 @@ public class DbAPI {
     public UserDTO update(@RequestBody UserDTO user) throws UserNotFoundException {
         Optional<User> opt=repo.findById(user.getId());
         if (opt.isEmpty()) {
+            logger.error("Request for user id:"+user.getId());
             throw new UserNotFoundException();
         }
         repo.deleteById(opt.get().getId());
@@ -36,7 +39,10 @@ public class DbAPI {
             return new UserDTO(result.get());
         }
 
-        else throw new UserNotFoundException();
+        else {
+            logger.error("Request for user id:"+id);
+            throw new UserNotFoundException();
+        }
     }
     @GetMapping("/all")
     public List<UserDTO> list(){
@@ -49,6 +55,9 @@ public class DbAPI {
         if (repo.existsById(id)) {
             repo.deleteById(id);
         }
-        else throw new UserNotFoundException();
+        else {
+            logger.error("Request for user id:"+id);
+            throw new UserNotFoundException();
+        }
     }
 }
