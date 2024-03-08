@@ -1,11 +1,3 @@
-2024-03-08T10:15:43.060+05:30 ERROR 95947 --- [http-nio-5000-exec-1] com.example.Db.Controller.DbAPI          : Request for user id:101
-2024-03-08T10:15:43.061+05:30 TRACE 95947 --- [http-nio-5000-exec-1] c.e.Db.Exception.GlobalExceptionHandler  : [Ljava.lang.StackTraceElement;@4fbab5d8
-2024-03-08T10:16:36.045+05:30 ERROR 96112 --- [http-nio-5000-exec-1] com.example.Db.Controller.DbAPI          : Request for user id:101
-2024-03-08T10:16:36.046+05:30 TRACE 96112 --- [http-nio-5000-exec-1] c.e.Db.Exception.GlobalExceptionHandler  : com.example.Db.Controller.DbAPI.delete(DbAPI.java:60)
-2024-03-08T10:20:37.729+05:30 ERROR 96284 --- [http-nio-5000-exec-1] com.example.Db.Controller.DbAPI          : Request for user id:101
-2024-03-08T10:20:37.730+05:30 TRACE 96284 --- [http-nio-5000-exec-1] c.e.Db.Exception.GlobalExceptionHandler  : null
-2024-03-08T10:21:29.907+05:30 ERROR 97058 --- [http-nio-5000-exec-1] com.example.Db.Controller.DbAPI          : Request for user id:101
-2024-03-08T10:21:29.908+05:30 TRACE 97058 --- [http-nio-5000-exec-1] c.e.Db.Exception.GlobalExceptionHandler  : com.example.Db.Controller.DbAPI.delete(DbAPI.java:60)
 2024-03-08T10:23:25.715+05:30 ERROR 98006 --- [http-nio-5000-exec-1] com.example.Db.Controller.DbAPI          : Request for user id:101
 2024-03-08T10:23:25.716+05:30 TRACE 98006 --- [http-nio-5000-exec-1] c.e.Db.Exception.GlobalExceptionHandler  : com.example.Db.Controller.DbAPI.delete(DbAPI.java:60)
 java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
